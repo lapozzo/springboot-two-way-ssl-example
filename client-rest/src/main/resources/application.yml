@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: client-rest
+---
+server:
+  port: 9443
+  ssl:
+    enabled: true
+    client-auth: need
+    key-store: classpath:client-rest.jks
+    key-store-password: client-rest
+    key-alias: client-rest
+    key-store-type: JKS
+    key-store-provider: SUN
+    trust-store: classpath:client-rest.jks
+    trust-store-password: client-rest
+    trust-store-type: JKS
+---
+endpoint:
+  ms-service: https://localhost:8443/server-rest/infos

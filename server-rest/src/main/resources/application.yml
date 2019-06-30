@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: server-rest
+---
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    client-auth: need
+    key-store: classpath:server-rest.jks
+    key-store-password: server-rest
+    key-alias: server-rest
+    key-store-type: JKS
+    key-store-provider: SUN
+    trust-store: classpath:server-rest.jks
+    trust-store-password: server-rest
+    trust-store-type: JKS
+  
